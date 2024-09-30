@@ -6,9 +6,9 @@ public class Calculator {
         Scanner scan = new Scanner(System.in);
 
         System.out.print("Enter a number: ");
-        float x = scan.nextInt();
+        float x = scan.nextFloat();
         System.out.print("Enter another number: ");
-        float y = scan.nextInt();
+        float y = scan.nextFloat();
         scan.nextLine(); //Consume the CRLF
         System.out.print("Choose an operation (+, -, *, /, %): ");
         String op = scan.nextLine();
