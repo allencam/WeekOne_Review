@@ -52,9 +52,9 @@ public class Calculator {
                     System.out.print("Get remainder of: (a) " + x + "/" + y + " or (b) " + y + "/" + x + "? ");
                     String orderMod = scan.nextLine();
                     if (orderMod.equals("a")) {
-                        System.out.print(divide(x, y));
+                        System.out.print(modulo(x, y));
                     } else if (orderMod.equals("b")) {
-                        System.out.print(divide(y, x));
+                        System.out.print(modulo(y, x));
                     }
                 }
                 break;
