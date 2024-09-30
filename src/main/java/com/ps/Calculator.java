@@ -10,7 +10,7 @@ public class Calculator {
         System.out.print("Enter another number: ");
         float y = scan.nextInt();
         scan.nextLine(); //Consume the CRLF
-        System.out.print("Choose an operation (+, -, *, /): ");
+        System.out.print("Choose an operation (+, -, *, /, %): ");
         String op = scan.nextLine();
 
         switch(op) {
@@ -19,10 +19,10 @@ public class Calculator {
                 break;
             case "-":
                 System.out.print("Subtract: (a) " + x + "-" + y + " or (b) " + y + "-" + x + "? ");
-                String order = scan.nextLine();
-                if(order.equals("a")){
+                String orderSub = scan.nextLine();
+                if(orderSub.equals("a")){
                     System.out.println(subtract(x,y));
-                } else if(order.equals("b")) {
+                } else if(orderSub.equals("b")) {
                     System.out.println(subtract(y,x));
                 }
                 else {
@@ -33,17 +33,28 @@ public class Calculator {
                 System.out.println(multiply(x,y));
                 break;
             case "/":
-                if( x == 0 || y == 0){
+                if( x == 0 || y == 0 ) {
                     System.out.println("Cannot divide by zero.");
                 } else {
                     System.out.print("Divide: (a) " + x + "/" + y + " or (b) " + y + "/" + x + "? ");
-                    String order1 = scan.nextLine();
-                    if (order1.equals("a")) {
+                    String orderDiv = scan.nextLine();
+                    if (orderDiv.equals("a")) {
                         System.out.print(divide(x, y));
-                        System.out.print("Remainder: " + modulo(x,y));
-                    } else if (order1.equals("b")) {
+                    } else if (orderDiv.equals("b")) {
                         System.out.print(divide(y, x));
-                        System.out.print("Remainder: " + modulo(y,x));
+                    }
+                }
+                break;
+            case "%":
+                if( x == 0 || y == 0 ) {
+                    System.out.println("Cannot divide by zero.");
+                } else {
+                    System.out.print("Get remainder of: (a) " + x + "/" + y + " or (b) " + y + "/" + x + "? ");
+                    String orderMod = scan.nextLine();
+                    if (orderMod.equals("a")) {
+                        System.out.print(divide(x, y));
+                    } else if (orderMod.equals("b")) {
+                        System.out.print(divide(y, x));
                     }
                 }
                 break;
